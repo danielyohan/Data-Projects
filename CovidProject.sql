@@ -140,5 +140,3 @@ WHERE death.continent IS NOT NULL
 SELECT *, (RollingVacc/Population)*100 AS RollingVaccRate
 FROM #TEMP_PopVSVacc
 ORDER BY 2, 3 
-
---Create view for visualization later..
