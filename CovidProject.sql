@@ -60,6 +60,7 @@ ORDER BY 2 DESC
 --LOOKING WORLDWIDE
 
 --Cases per day
+--Had to use CASEs in order to avoid division by 0
 
 SELECT Date,
 New_cases,
