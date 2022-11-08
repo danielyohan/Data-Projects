@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #########################################
-# Question A1 - do not delete this comment
+# Question A1 - TV Show Popularity
 #########################################
 
 def analyze_rating_data (filename):
@@ -43,10 +43,15 @@ def analyze_rating_data (filename):
     print ('Minimal rating for each episode:')
     ew_episode_for_each_season = rating.min(axis=0)
     print (ew_episode_for_each_season)
+    
+ 
+###################################################
+# Question B - Global COVID-19 Morbidity Analysis
+###################################################
 
-#########################################
-# Question B1 - do not delete this comment
-#########################################
+###################################################
+# Question B1 - Loading and Transforming Data
+###################################################
 def load_covid_world_matrix(filename, fieldname):
     f = False
     countries_lst = []
@@ -90,7 +95,7 @@ def load_covid_world_matrix(filename, fieldname):
             f.close()
 
 #########################################
-# Question B2 - do not delete this comment
+# Question B2 - Analysis
 #########################################
 def analyze_covid_data(countries, dates, matrix):
 
@@ -115,9 +120,9 @@ def analyze_covid_data(countries, dates, matrix):
     ind = matrix.sum(axis=0).argmax()
     print(dates[ind])
 
-#########################################
-# Question B3.1 - do not delete this comment
-#########################################
+###############################################################
+# Question B3.1 - Data Visualization - Cases per day in Israel
+###############################################################
 def plot_country_data(matrix, countries, country):
     x = range(matrix.shape[1])
     y = matrix[countries == country, :].T
@@ -126,9 +131,9 @@ def plot_country_data(matrix, countries, country):
     plt.xlabel("Days")
     plt.show()
 
-#########################################
-# Question B3.2 - do not delete this comment
-#########################################
+###################################################
+# Question B3.2 - Cases per day in Top 5 Countries
+###################################################
 def plot_top_countries(matrix, countries):
     x = range(matrix.shape[1])
     srtd_indx = np.argsort(matrix.sum(axis=1))
@@ -149,9 +154,9 @@ def plot_top_countries(matrix, countries):
                str(countries[srtd_indx[-2]]), str(countries[srtd_indx[-1]]) ] )
     plt.show()
 
-#########################################
-# Question B3.3 - do not delete this comment
-#########################################
+############################################################################
+# Question B3.3 - Cases in top 20 Countries during first 100 Days - Heatmap
+############################################################################
 def draw_covid_heatmap(matrix, countries):
     small_parts = matrix < 1
     matrix[small_parts] = 1
